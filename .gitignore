@@ -1,5 +1,2 @@
-**/*.rs.bk
-.idea/*
-**/.idea/*
-**/debug/*
-**/target/debug/*
+**/target/debug/
+**/.idea/
