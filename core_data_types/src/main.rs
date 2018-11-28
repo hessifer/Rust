@@ -1,6 +1,6 @@
 use std::mem;
 
-fn main() {
+fn core_data_types() {
     // integers (i8,u8,i16,u16,i32,u32,i64,u64,isize,usize)
     let a:u32 = 123;
     let b:u8 = 5;
@@ -43,4 +43,23 @@ fn main() {
     if is_home {
         println!("You are home!");
     }
+}
+
+fn operators() {
+    let mut a:i32 = 2 + 3 * 4;
+    println!("{}", a);
+
+    a = a + 1; // no support for post/pre increment -- ++
+    a *= a;
+
+    println!("{}", a);
+
+    let a_cubed:i32 = i32::pow(a, 3);
+    println!("{} cubed is {}", a, a_cubed);
+
+}
+
+fn main() {
+    core_data_types();
+    operators();
 }
