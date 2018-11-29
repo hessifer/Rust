@@ -46,6 +46,8 @@ fn core_data_types() {
 }
 
 fn operators() {
+    // arithmetic
+
     let mut a:i32 = 2 + 3 * 4;
     println!("{}", a);
 
@@ -56,6 +58,24 @@ fn operators() {
 
     let a_cubed:i32 = i32::pow(a, 3);
     println!("{} cubed is {}", a, a_cubed);
+
+    let b = 2.5; // floating point value of type f64 assigned to b
+    let b_cubed = f64::powi(b, 3); // b cubed to the power of an integer
+    let b_to_pi = f64::powf(b, std::f64::consts::PI); // b cubed to the power of PI
+
+    println!("b = {}", b);
+    println!("{} cubed is {}", b, b_cubed);
+    println!("{} to the power of PI is {}", b, b_to_pi);
+
+    // bitwise
+    let c = 1 | 2; // | OR, & AND, ^ XOR, ! NOR
+    println!("1|2 is {}", c); // 01 OR 10 = 11 = the decimal value 3
+
+    let d = 4 | 6; // 100 OR 110 = 110 = the decimal value 6
+    println!("4|6 is {}", d);
+
+    let two_to_10 = 1 << 10; // << shift operator
+    println!("2^10 = {}", two_to_10);
 
 }
 
