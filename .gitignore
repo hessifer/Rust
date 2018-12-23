@@ -1,2 +1,8 @@
 **/target/debug/**
 **/.idea/**
+
+/target
+**/*.rs.bk
+
+/target
+**/*.rs.bk
