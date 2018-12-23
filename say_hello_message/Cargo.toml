@@ -1,0 +1,6 @@
+[package]
+name = "say_hello_message"
+version = "0.1.0"
+authors = ["hessifc"]
+
+[dependencies]
