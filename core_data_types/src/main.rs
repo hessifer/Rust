@@ -1,5 +1,9 @@
 use std::mem;
 
+const FAVORITE_NUMBER:u8 = 5; // no fixed of address
+
+static mut FAVORITE_DAY:u8 = 2; // allows access to address of variable (UNSAFE operation (unsafe)
+
 fn core_data_types() {
     // integers (i8,u8,i16,u16,i32,u32,i64,u64,isize,usize)
     let a:u32 = 123;
@@ -77,9 +81,45 @@ fn operators() {
     let two_to_10 = 1 << 10; // << shift operator
     println!("2^10 = {}", two_to_10);
 
+    // logical
+    let pi_less_4 = std::f64::consts::PI < 4.0; // should be true
+    println!("{} < 4.0 = {}", std::f64::consts::PI, pi_less_4);
+
+}
+
+fn scope_and_shadowing() {
+    let a = 123;
+
+    // let a = 999; // the latest declaration overrides the first (produces warning)
+
+    {
+        let b = 456;
+        println!("inside, b = {}", b);
+
+        let a = 53;
+        println!("inside, a = {}", a);
+    }
+
+    println!("outside, a = {}", a);
+}
+
+fn declaring_and_using_constants() {
+    // display favorite number constant
+    println!("Favorite Number: {}", FAVORITE_NUMBER);
 }
 
 fn main() {
     core_data_types();
     operators();
+    scope_and_shadowing();
+    declaring_and_using_constants();
+
+    // for unsafe operations use 'unsafe' block
+    unsafe {
+        println!("Favorite Day: {}", FAVORITE_DAY);
+        // we can change value of our 'static' variable FAVORITE_DAY
+        FAVORITE_DAY = 3;
+        println!("Modified Favorite Color Day: {}", FAVORITE_DAY);
+
+    }
 }
