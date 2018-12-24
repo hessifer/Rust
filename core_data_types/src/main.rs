@@ -1,3 +1,6 @@
+#![allow(dead_code)]
+mod sh;
+mod func;
 use std::mem;
 
 const FAVORITE_NUMBER:u8 = 5; // no fixed of address
@@ -47,6 +50,28 @@ fn core_data_types() {
     if is_home {
         println!("You are home!");
     }
+
+    // two primitive compound types: tuple & array
+    let a_tup: (i32, f64, u8) = (500, 6.4, 1); // with type annotation
+    let b_tup = (300, 3.4, 5); // with-out optional type annotation
+
+    // destructuring a tuple
+    let (a, b, c) = a_tup;
+    let (d, e, f) = b_tup;
+
+    println!("The value of a is {}", a);
+    println!("The value of b is {}", b);
+    println!("The value of c is {}", c);
+    println!("The value of d is {}", d);
+    println!("The value of e is {}", e);
+    println!("The value of f is {}", f);
+    println!("The third value in b_tup is: {}", b_tup.2);
+
+    // arrays
+    let my_array = [2, 3, 4, 5, 6];
+    println!("The 3rd element of my_array is {}", my_array[2]);
+
+
 }
 
 fn operators() {
@@ -120,6 +145,20 @@ fn main() {
         // we can change value of our 'static' variable FAVORITE_DAY
         FAVORITE_DAY = 3;
         println!("Modified Favorite Color Day: {}", FAVORITE_DAY);
-
     }
+
+    // use sh.rs module
+    sh::stack_and_heap_allocation();
+
+
+    // working with functions
+    func::say_hello();
+    if func::is_even(5) {
+        println!("The number 5 is even.");
+    } else {
+        println!("The number 5 is odd.");
+    }
+
+    let answer = func::sum_of_two_nums(11, 12);
+    println!("The sum of {} and {} is {}", 11, 12, answer);
 }
