@@ -1,6 +1,8 @@
 #![allow(dead_code)]
 mod sh;
 mod func;
+mod loopy;
+mod calc_fib_term;
 use std::mem;
 
 const FAVORITE_NUMBER:u8 = 5; // no fixed of address
@@ -161,4 +163,16 @@ fn main() {
 
     let answer = func::sum_of_two_nums(11, 12);
     println!("The sum of {} and {} is {}", 11, 12, answer);
+
+
+    // working with loops
+    loopy::repeat_forever();
+    loopy::repeat_until(5);
+    let mut numbers = [20, 21, 22, 23, 24, 25];
+    loopy::show_evens(&mut numbers);
+
+    // calc fibonacci term
+    let result = calc_fib_term::calc_fib_term(5);
+    println!("The 5th fibonacci value is: {}", result);
+
 }
