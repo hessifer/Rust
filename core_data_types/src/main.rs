@@ -4,6 +4,7 @@ mod func;
 mod loopy;
 mod calc_fib_term;
 mod data_structures;
+mod enums;
 use std::mem;
 
 const FAVORITE_NUMBER:u8 = 5; // no fixed of address
@@ -183,4 +184,8 @@ fn main() {
     let my_line = sh::Line { start: point_a, end: point_b };
     data_structures::display_point(my_point);
     data_structures::display_line(my_line);
+
+
+    // Enums
+    enums::enums();
 }
