@@ -1,9 +1,15 @@
 #![allow(dead_code)]
 use std::mem;
 
-struct Point {
-    x: f64,
-    y: f64
+// public struct for use outside this file
+pub struct Point {
+    pub x: f64,
+    pub y: f64
+}
+
+pub struct Line {
+    pub start: Point,
+    pub end: Point
 }
 
 fn origin() -> Point {

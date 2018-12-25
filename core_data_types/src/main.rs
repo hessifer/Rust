@@ -3,6 +3,7 @@ mod sh;
 mod func;
 mod loopy;
 mod calc_fib_term;
+mod data_structures;
 use std::mem;
 
 const FAVORITE_NUMBER:u8 = 5; // no fixed of address
@@ -175,4 +176,11 @@ fn main() {
     let result = calc_fib_term::calc_fib_term(5);
     println!("The 5th fibonacci value is: {}", result);
 
+    // Data Structures
+    let my_point = sh::Point { x: 5.6, y: 7.8 }; // our struct is defined in sh.rs
+    let point_a = sh::Point { x: 1.6, y: 4.8 }; // our struct is defined in sh.rs
+    let point_b = sh::Point { x: 0.6, y: 9.8 }; // our struct is defined in sh.rs
+    let my_line = sh::Line { start: point_a, end: point_b };
+    data_structures::display_point(my_point);
+    data_structures::display_line(my_line);
 }
