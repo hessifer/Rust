@@ -5,6 +5,9 @@ mod loopy;
 mod calc_fib_term;
 mod data_structures;
 mod enums;
+mod ownership;
+mod mem_allocation;
+mod return_values_and_scope;
 use std::mem;
 
 const FAVORITE_NUMBER:u8 = 5; // no fixed of address
@@ -188,4 +191,30 @@ fn main() {
 
     // Enums
     enums::enums();
-}
+
+    // Ownership
+    ownership::ownership_example_1();
+
+
+
+    // Memory Allocation (Shadow / Deep Copy)
+    mem_allocation::var_copies();
+
+    let my_string = String::from("mystring"); // my_string into scope
+    mem_allocation::takes_ownership(my_string); // my_string's value moved into function, no longer valid here
+
+    let x = 5; // x comes into scope
+    mem_allocation::makes_copy(x); // x would move into function, but it is an integer (fixed size), so not moved out of scope
+
+
+    // return values and scopes (giving and taking)
+    let s5 = return_values_and_scope::gives_ownership(); // moves its return value into s5
+
+    let s6 = String::from("dog"); // s6 into scope
+
+    let s7 = return_values_and_scope::takes_and_gives_back(s6); // s6 is moved into takes_and_gives_back, which then
+                                                                               // moves its return value into s7
+
+    println!("s7: {}", s7);
+    println!("s5: {}", s5);
+} // s6 goes out of scope
