@@ -14,6 +14,7 @@ fn main() {
     let mut first_name = String::new();
     let mut age = String::new();
     let mut choice = String::new();
+    let mut speed_demon = false;
 
     println!("Please enter your first name and age");
     io::stdin().read_line(&mut first_name).expect("ERROR: Could not parse first name.");
@@ -27,6 +28,7 @@ fn main() {
     if choice == "fast" {
         if age > 12 {
             println!("Nice, buckle up and enjoy the fast roller coaster!");
+            speed_demon = true;
         } else {
             println!("Good choice, unfortunately you need to be 13 years of age or older.");
             println!("Would you like to ride the slow roller coaster instead? [yes/no]: ");
@@ -40,5 +42,15 @@ fn main() {
         }
     } else {
         println!("Enjoy the ride.");
+    }
+
+    let took_fast_roller_coaster = if speed_demon {
+        true
+    } else {
+        false
+    };
+
+    if took_fast_roller_coaster {
+        println!("Please stop by the photo booth to view/purchase your picture.");
     }
 }
