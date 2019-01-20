@@ -6,6 +6,7 @@ fn main() {
     // take_input();
     // if_else();
     get_larger_number();
+    loops_in_rust();
 }
 
 fn data_types() {
@@ -150,10 +151,26 @@ fn get_larger_number() {
     io::stdin().read_line(&mut entry2).expect("Failed");
     let num2:i64 = entry2.trim().parse().expect("Failed");
 
-    if num1 > num2 {
-        println!("Larger Number: {}", num1);
+    if num1 == num2 {
+        ()
+    } else if num1 > num2 {
+            println!("Larger Number: {}", num1);
     } else {
         println!("Larger Number: {}", num2);
     }
+}
 
+fn loops_in_rust() {
+    // Rust has 3 types of loops
+    // loop, for, while
+
+    let mut counter = 0;
+    // loop (requires breaking condition
+    loop {
+        counter += 1;
+        println!("hello");
+        if counter == 3 {
+            break;
+        }
+    }
 }
