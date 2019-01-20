@@ -8,6 +8,10 @@ mod enums;
 mod ownership;
 mod mem_allocation;
 mod return_values_and_scope;
+mod references_borrowing;
+mod slice_type;
+mod array_slicing;
+mod arrays;
 use std::mem;
 
 const FAVORITE_NUMBER:u8 = 5; // no fixed of address
@@ -77,8 +81,6 @@ fn core_data_types() {
     // arrays
     let my_array = [2, 3, 4, 5, 6];
     println!("The 3rd element of my_array is {}", my_array[2]);
-
-
 }
 
 fn operators() {
@@ -138,6 +140,22 @@ fn scope_and_shadowing() {
 fn declaring_and_using_constants() {
     // display favorite number constant
     println!("Favorite Number: {}", FAVORITE_NUMBER);
+}
+
+fn if_statement() {
+    let temp = 35;
+
+    // if statement in Rust is an expression
+    if temp > 30 {
+        println!("Really hot outside!");
+    } else if temp < 10 {
+        println!("Really cold!");
+    } else {
+        println!("The temperature is OK.");
+    }
+
+    // using if as expression
+    let day = if temp > 20 {"sunny"} else {"cloudy"};
 }
 
 fn main() {
@@ -217,4 +235,41 @@ fn main() {
 
     println!("s7: {}", s7);
     println!("s5: {}", s5);
+
+
+    // References and Borrowing
+    let my_greeting = String::from("hola");
+
+    println!("The length of my_greeting is: {}", references_borrowing::calculate_length_of_string(&my_greeting));
+
+    let mut fname = String::from("Charles");
+    println!("Original fname: {}", fname);
+
+    references_borrowing::modify_greeting(&mut fname);
+    println!("Modified fname: {}", fname);
+
+
+
+    // Slices
+    let some_message = String::from("Roses are red, violets are blue");
+
+    println!("First Word: {}", slice_type::first_word(&some_message[..])); // pass in whole slice (str literal to our function) allows more coverage
+
+
+
+    // Simple Array Slicing
+    let my_nums = [10, 11, 12, 13, 14, 15, 16, 17];
+
+    for (i, &item) in array_slicing::a_bit_of_array(&my_nums[..]).iter().enumerate() {
+        println!("Element: {} Value: {}", i + 1, &item);
+    }
+
+
+    // playing with arrays
+    arrays::find_evens(&my_nums); // no need to pass ownership
+
+
+    // if statement and controlling flow
+    if_statement();
+
 } // s6 goes out of scope

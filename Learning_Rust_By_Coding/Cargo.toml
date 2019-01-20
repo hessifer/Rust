@@ -1,0 +1,6 @@
+[package]
+name = "Learning_Rust_By_Coding"
+version = "0.1.0"
+authors = ["Charles A. Hessifer <hessifer@gmail.com>"]
+
+[dependencies]

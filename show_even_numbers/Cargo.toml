@@ -1,0 +1,6 @@
+[package]
+name = "show_even_numbers"
+version = "0.1.0"
+authors = ["Charles A. Hessifer <hessifer@gmail.com>"]
+
+[dependencies]
