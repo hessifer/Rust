@@ -173,4 +173,15 @@ fn loops_in_rust() {
             break;
         }
     }
+
+    // while (runs while condition is true)
+    while counter < 4 {
+        println!("Sup!");
+        counter += 1;
+    }
+
+    // for to iterate over collections
+    for n in 1 .. 10 {
+        println!("{}", n);
+    }
 }
