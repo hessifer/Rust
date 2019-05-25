@@ -155,14 +155,14 @@ fn if_statement() {
     }
 
     // using if as expression
-    let day = if temp > 20 {"sunny"} else {"cloudy"};
+    let _day = if temp > 20 {"sunny"} else {"cloudy"};
 }
 
 fn main() {
-    core_data_types();
-    operators();
-    scope_and_shadowing();
-    declaring_and_using_constants();
+    // core_data_types();
+    // operators();
+    // scope_and_shadowing();
+    // declaring_and_using_constants();
 
     // for unsafe operations use 'unsafe' block
     unsafe {
@@ -267,6 +267,7 @@ fn main() {
 
     // playing with arrays
     arrays::find_evens(&my_nums); // no need to pass ownership
+    println!("{:?}", arrays::find_odds(&my_nums));
 
 
     // if statement and controlling flow
