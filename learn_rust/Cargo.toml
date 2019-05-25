@@ -1,0 +1,7 @@
+[package]
+name = "learn_rust"
+version = "0.1.0"
+authors = ["nagalot"]
+edition = "2018"
+
+[dependencies]
