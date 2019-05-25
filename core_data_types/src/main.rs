@@ -12,6 +12,8 @@ mod references_borrowing;
 mod slice_type;
 mod array_slicing;
 mod arrays;
+mod vectors;
+mod printing_fmt;
 use std::mem;
 
 const FAVORITE_NUMBER:u8 = 5; // no fixed of address
@@ -159,10 +161,21 @@ fn if_statement() {
 }
 
 fn main() {
+    // create a vector to use as an argument
+    let numbers: Vec<i32> = (0..20).collect();
+
+    // vectors::basic_vector();
+    vectors::vector_as_arguments(&numbers);
+    println!("The numbers vector takes up {} bytes of memory.", mem::size_of_val(&numbers));
+
+
+    // printing_fmt::print_pi();
     // core_data_types();
     // operators();
     // scope_and_shadowing();
     // declaring_and_using_constants();
+    // printing_fmt::print_pi();
+
 
     // for unsafe operations use 'unsafe' block
     unsafe {

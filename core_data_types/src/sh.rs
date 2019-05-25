@@ -22,6 +22,7 @@ pub fn stack_and_heap_allocation() {
 
     // allocate on the heap
     let y = Box::new(10); // y is stored on the stack with an address that points to the value
+
     // stored on the heap
     println!("{}", x); // pop value of x off the stack
     println!("{}", *y); // use the dereference symbol (*) to get value stored at address on heap
