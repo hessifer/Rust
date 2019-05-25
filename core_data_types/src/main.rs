@@ -14,6 +14,7 @@ mod array_slicing;
 mod arrays;
 mod vectors;
 mod printing_fmt;
+mod move_clone_mutate;
 use std::mem;
 
 const FAVORITE_NUMBER:u8 = 5; // no fixed of address
@@ -162,11 +163,15 @@ fn if_statement() {
 
 fn main() {
     // create a vector to use as an argument
-    let numbers: Vec<i32> = (0..20).collect();
+    // let numbers: Vec<i32> = (0..20).collect();
 
     // vectors::basic_vector();
-    vectors::vector_as_arguments(&numbers);
-    println!("The numbers vector takes up {} bytes of memory.", mem::size_of_val(&numbers));
+    // vectors::vector_as_arguments(&numbers);
+    // println!("The numbers vector takes up {} bytes of memory.", mem::size_of_val(&numbers));
+
+    move_clone_mutate::by_cloning();
+    move_clone_mutate::by_moving();
+    move_clone_mutate::by_mutating();
 
 
     // printing_fmt::print_pi();
