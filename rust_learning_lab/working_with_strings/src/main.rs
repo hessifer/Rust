@@ -12,14 +12,14 @@ fn main() {
     for c in last_name.chars() {
         print!("{} ", c.to_lowercase());
     }
-    println!("");
+    println!();
     println!("Size of Charles in bytes: {}", last_name.len());
     
     for (i, c) in last_name.char_indices() { // can be used instead of .chars().enumerate()
         println!("{} = {}", i, c);
     }
     
-    println!("");
+    println!();
     println!("{} has {} vowels in it.", last_name, count_vowels(&last_name));
 }
 
