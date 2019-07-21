@@ -1,7 +1,4 @@
-*/target/**
-*/target/*
-core_data_types/target/.rustc_info.json
-*/.idea/*
+/.idea/
+/target/
 .idea
 *.swp
- */*/target/debug/*
