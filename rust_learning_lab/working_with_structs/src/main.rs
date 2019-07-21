@@ -8,7 +8,8 @@ struct User {
 
 impl User {
     fn simple_string(&self) -> String {
-        format!("User: {}\nAge: {}\nHeight: {}\"\nWeight: {} lbs\nShoe Size: {}\n\n", self.name, self.age, self.height, self.weight, self.shoesize)
+        format!("User: {}\nAge: {}\nHeight: {}\"\nWeight: {} lbs\nShoe Size: {}\n\n", self.name,
+                self.age, self.height, self.weight, self.shoesize)
     }
 }
 
