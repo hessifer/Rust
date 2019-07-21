@@ -23,7 +23,7 @@ fn main() {
     println!("{} has {} vowels in it.", last_name, count_vowels(&last_name));
 }
 
-fn count_vowels(s: &str) -> i32 {
+fn count_vowels(s: &str) -> i32 {  // &str is more flexible here
     let vowels = vec!['a', 'e', 'i', 'o', 'u'];
     let mut result = 0;
     
