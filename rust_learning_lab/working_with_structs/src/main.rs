@@ -21,5 +21,5 @@ fn main() {
         shoesize: 9,
     };
 
-    println!("User is {}", u.simple_string());
+    println!("{}", u.simple_string());
 }
