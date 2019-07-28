@@ -6,7 +6,6 @@ fn main() {
     for i in first_name.chars() {
         print!("{} ", i.to_lowercase());
     }
-    
     println!("\n");
     
     for c in last_name.chars() {
@@ -18,7 +17,6 @@ fn main() {
     for (i, c) in last_name.char_indices() { // can be used instead of .chars().enumerate()
         println!("{} = {}", i, c);
     }
-    
     println!("");
     println!("{} has {} vowels in it.", last_name, count_vowels(&last_name));
 }
