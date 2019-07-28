@@ -14,7 +14,7 @@ pub enum Room {
 fn main() {
     use self::Room::*;
 
-    let t = Bedroom(Bed{size:50, count:3});
+    let t = Bedroom(Bed { size: 50, count: 3 });
     let l = Lounge(5, "big".to_string());
 
     println!("Hello from the {:?}.", t);
