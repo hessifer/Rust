@@ -4,6 +4,7 @@ fn first_word(s: &String) -> &str {
     let mut offset = 0;
 
     for (i, &item) in bytes.iter().enumerate() {
+        // capture words but ignore blank spaces
         if item == b' ' {
             if offset == 0 {
                 words.push(&s[offset..i]);
@@ -15,13 +16,14 @@ fn first_word(s: &String) -> &str {
         }
     }
 
+    // capture last word
     if offset > 0 {
         words.push(&s[offset..bytes.len()].trim());
     }
 
     println!("Number of words: {}", words.len());
     println!("Words: {:?}", words);
-    return words[0];
+    words[0]
 }
 
 fn main() {
