@@ -1,6 +1,6 @@
 struct User {
     name: String,
-    age:  i32,
+    age: i32,
     height: i32,
     weight: i32,
     shoesize: i32,
@@ -8,8 +8,10 @@ struct User {
 
 impl User {
     fn simple_string(&self) -> String {
-        format!("User: {}\nAge: {}\nHeight: {}\"\nWeight: {} lbs\nShoe Size: {}\n\n", self.name,
-                self.age, self.height, self.weight, self.shoesize)
+        format!(
+            "User: {}\nAge: {}\nHeight: {}\"\nWeight: {} lbs\nShoe Size: {}\n\n",
+            self.name, self.age, self.height, self.weight, self.shoesize
+        )
     }
 
     fn grow(&mut self, h: i32) {
@@ -35,5 +37,5 @@ fn main() {
     println!("{}", u.simple_string());
 
     u.die(); // u is now consumed and can no longer be used
-    // u.grow(10); // will error as 'u' has moved
+             // u.grow(10); // will error as 'u' has moved
 }

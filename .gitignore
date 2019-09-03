@@ -2,3 +2,11 @@
 */*/target/
 .idea
 *.swp
+rust_learning_lab/highest/.vs/highest/v16/.suo
+rust_learning_lab/highest/.vs/ProjectSettings.json
+rust_learning_lab/highest/.vs/slnx.sqlite
+rust_learning_lab/highest/.vs/VSWorkspaceState.json
+rust_learning_lab/working_with_structs/.vs/ProjectSettings.json
+rust_learning_lab/working_with_structs/.vs/slnx.sqlite
+rust_learning_lab/working_with_structs/.vs/VSWorkspaceState.json
+rust_learning_lab/working_with_structs/.vs/working_with_structs/v16/.suo
