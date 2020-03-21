@@ -1,7 +1,11 @@
 fn main() {
     let mut message = String::from("Hello World!");
     let add_text = String::from(" Dude");
-    println!("The length of {} is {}.", message, calculate_length(&message));
+    println!(
+        "The length of {} is {}.",
+        message,
+        calculate_length(&message)
+    );
     append_text(&mut message, &add_text);
     println!("The new message is: {}", message);
 }
