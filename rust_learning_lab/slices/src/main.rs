@@ -1,4 +1,4 @@
-fn get_words(s: &String) -> Vec<&str> {
+fn get_words(s: &str) -> Vec<&str> {
     let bytes = s.as_bytes();
     let mut words = Vec::new();
     let mut pos = 0;
@@ -31,7 +31,8 @@ fn get_words(s: &String) -> Vec<&str> {
 
 fn main() {
     let s = String::from("All Work & No Play ");
-    let words = get_words(&s);
+    // pass a slice of String (copy)
+    let words = get_words(&s[..]);
     // s.clear(); // empties string
 
     println!("First Word: {}", words[0]);
