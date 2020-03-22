@@ -97,4 +97,11 @@ fn main() {
     let origin = Point(0, 0, 0);
 
     println!("Color: {:?}\tOrigin: {:?}", black, origin);
+
+
+    // Unit-like Structs
+    // Used to implement a trait on some type but don't have
+    // any data that you wnat to store in the type itself
+    
+    // struct unit_like_example();  // behave similar to unit type
 }
