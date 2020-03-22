@@ -37,15 +37,10 @@ impl Student {
     fn add_course(&mut self, course: &str) {
         self.courses.push(course.to_string());
     }
-/*
-    fn remove_course(&mut self) {
-
-    }
-
+    
     fn list_courses(&self) {
-
+        println!("{}", &self.courses.join(", "));
     }
-*/
 }
 
 fn main() {
@@ -78,12 +73,12 @@ fn main() {
     println!("What course would you like to enroll in?");
     
     match io::stdin().read_line(&mut input) {
-        Ok(_) => charles.add_course(&input),
+        Ok(_) => charles.add_course(&input.trim_end()),
         Err(_) => println!("Unable to enroll in course: {}", input),
     }
-    println!("Student ID: {}\n\tName: {} {}", charles.student_id, charles.first_name, charles.last_name);
-    println!("\tCourses:");
-    for course in charles.courses {
-        println!("\t\t{}", course);
-    }
+    println!("Student ID: {}\nName: {} {}", charles.student_id, charles.first_name, charles.last_name);
+    print!("Courses: ");
+    charles.add_course("CS 101");
+    charles.list_courses();
+    println!();
 }
