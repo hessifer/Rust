@@ -81,4 +81,20 @@ fn main() {
     charles.add_course("CS 101");
     charles.list_courses();
     println!();
+
+
+    // Example of a Tuple Struct
+    // Tuple structs have a name for the struct, 
+    // but just the type for the fields. Good for
+    // naming a tuple.
+    #[derive(Debug)]
+    struct Color(i32, i32, i32);
+    
+    #[derive(Debug)]
+    struct Point(i32, i32, i32);
+
+    let black = Color(0, 0, 0);
+    let origin = Point(0, 0, 0);
+
+    println!("Color: {:?}\tOrigin: {:?}", black, origin);
 }
