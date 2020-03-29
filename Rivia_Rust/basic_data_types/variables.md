@@ -73,4 +73,18 @@ Wrapping means that if you have a value of 256 stored in your variable of type u
 #### Floating-Points
 * floating-points are numbers with decimal points.
 * Rust has two primitive types for floating-points: *f32* and *f64*
+    * f32 provides single precision
+    * f64 provides double precision
+* Rust supports all the basic Mathematical operations you would expect
+    * *, +, /, %, -, 
+
+#### Boolean
+* one of two possible values true or false
+* boolean are 1 byte in size
+
+
+#### Character
+* Rust most primitive type is the **char** type
+* specified using single quotes ```let letter: char = 'c';```
+* 
     
