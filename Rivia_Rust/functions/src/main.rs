@@ -20,9 +20,14 @@ fn main() {
     // Invoke say_hello with num arguments or return value
     say_hello();
 
-    // Invoke shout_greeting using mutable reference
+    // Invoke append_to_greeting using mutable reference
     let mut msg: String = String::from("wazzzup!");
-    println!("{}", shout_greeting(&mut msg));
+    append_to_greeting(&mut msg);
+    println!("{}", msg);
+
+    // Invoke shout_greeting and set return value to new_msg
+    let new_msg: String = shout_greeting(msg);
+    println!("New Msg: {}", new_msg);
 }
 
 fn greeting(txt: String) {
@@ -40,7 +45,11 @@ fn sum_two_nums(num1: i32, num2: i32) -> i32 {
     num1 + num2
 }
 
-fn shout_greeting(greeting: &mut str) -> String {
-    return greeting.to_uppercase();
+fn append_to_greeting(greeting: &mut String) {
+    greeting.push_str(" Nagalot");
+}
+
+fn shout_greeting(msg: String) -> String {
+    return msg.to_uppercase();
 }
 
