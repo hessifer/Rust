@@ -210,3 +210,49 @@ fn value_in_cents(coin: Coin) -> u8 {
     }
 }
 ```
+
+Previously we looked at getting the inner *T* value out of *Some* when using *Option<T>*. No let's look
+at how to handle Option<T> using *match*
+
+```
+// write a function that takes an *Option<i32>* and if there is a value inside add 1 to that value.
+// If there is no value inside, the function should return the *None* value and not attempt
+// to perform any operations
+fn plus_one(x: Option<i32>) -> Option<i32> {
+    match x {
+        None => None,
+        Some(i) => Some(i + 1),
+    }
+}
+
+let five = Some(5);
+let six = plus_one(five);
+let none = plus_one(None);
+
+```
+
+**Reminder** Matches in Rust are exhaustive, you must exhaust every possibility in order for the code to
+be valid.
+
+* The *_* patter will match any value. Putting this after your arms it will match all possible cases 
+that aren't specified before it. The *()* below is just the unit value so nothing will happen. Essentially
+we are saying below that we want to do nothing for all the possible values that we don't list before
+the *_* placeholder.
+
+``` 
+let some_u8_value = 0u8;
+
+match some_u8_value {
+    1 => println!("one"),
+    3 => println!("three"),
+    5 => println!("five"),
+    7 => println!("seven"),
+    _ => (),
+}
+```
+
+The *match* expression can be a bit verbose in a situation in which we care about only *one* of the cases.
+
+- For this situation, Rust provides *if let*
+
+#### if let
