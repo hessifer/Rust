@@ -256,3 +256,35 @@ The *match* expression can be a bit verbose in a situation in which we care abou
 - For this situation, Rust provides *if let*
 
 #### if let
+* allows you to combine if and let into a less verbose way to handle values that match one pattern while
+ignoring the rest.
+```
+let some_u8_value = Some(0u8);
+
+// in the match below we only care about one thing and discard the rest, use if let
+match some_u8_value {
+    Some(3) => println!("three");
+    _ => (),
+}
+```
+
+The example above rewritten to use an *if let*
+```
+if let Some(3) = some_u8_value {
+    println!("three");
+}
+```
+
+* The above example is cleaner and less verbose. We don't get the same exhaustive checking with if let
+as we do with match, but this use case did not call for it.
+
+* An *else* can be used in conjunction with *if let*, if you wanted a catch all like we had in our
+match example you could:
+
+```
+if let Some(3) = some_u8_value {
+    println!("three");
+} else {
+    println!("not three");
+}
+```
