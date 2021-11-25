@@ -1,9 +1,3 @@
-#[derive(Debug)]
-pub enum Res<T, E> { // generics, Res can be of any type
-    Thing(T),
-    Error(E),
-}
-
 fn main() {
     let a = 144;
     let b = 12;
@@ -16,20 +10,27 @@ fn main() {
 
     // implementing a match for our Res
     match result1 {
-        Res::Thing(v) => println!("Value: {}", v),
+        // Result is part of stand library so we dont need to type it below
+        // Result::Ok(v) => println!("Value: {}", v),
+        Ok(v) => println!("Value: {}", v),
         _ => {}
     }
 
     match result2 {
-        Res::Thing(v) => println!("Value: {}", v),
-        Res::Error(e) => println!("Error: {}", e),
+        Ok(v) => println!("Value: {}", v),
+        Err(e) => println!("Error: {}", e),
+    }
+
+    // if you only care about 1 case
+    if let Ok(v) = result1 {
+        println!("val = {}", v)
     }
 }
 
 
-fn divide(a: i32, b: i32) -> Res<i32, String> {
+fn divide(a: i32, b: i32) -> Result<i32, String> {
     if b == 0 {
-        return Res::Error("Cannot divide by zero".to_string());
+        return Err("Cannot divide by zero".to_string());
     }
-    Res::Thing(a / b)
+    Ok(a / b)
 }
