@@ -60,6 +60,7 @@ fn main() {
     let mut n = 0;
     // infinite loop
     println!("Infinite Loop");
+
     loop {
         n += 1;
             if n > 10 {
@@ -70,14 +71,17 @@ fn main() {
     println!("All done!");
 
     println!("while loop");
+
    // while loop
     let mut m = 0;
+
     while m < 10 {
         m += 1;
         println!("{}", m);
     }
 
     println!("for loop");
+
     // for loop
     for i in 0..10 { // range object
         println!("{}", i);
