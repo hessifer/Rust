@@ -2,6 +2,7 @@
 .vscode/
 /.idea/
 */*/target/
+*/*/target/*
 .idea
 *.swp
 rust_learning_lab/highest/.vs/highest/v16/.suo
