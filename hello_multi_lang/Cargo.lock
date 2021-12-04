@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "show_even_numbers"
+name = "hello_multi_lang"
 version = "0.1.0"
