@@ -2,7 +2,7 @@ use std::io;
 use std::io::Write;
 
 fn main() {
-    let colors = ["sword", "ruby", "shield", "wand"];
+    let items = ["sword", "ruby", "shield", "wand"];
     let mut guess = String::new();
 
     print!("Guess an item and see if it is in the treasure chest: ");
@@ -20,8 +20,9 @@ fn main() {
 
     println!("{}", result);
     println!("\nThe items in the teasure chest were:");
-    for c in colors {
-        print!("{} ", c);
+
+    for item in items {
+        print!("{} ", item);
     }
     print!("\n");
 }
