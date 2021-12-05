@@ -15,7 +15,7 @@ fn main() {
         "ruby" => format!("You have found a large glowing {}.", trim_guess),
         "shield" => format!("You have found a tower {}.", trim_guess),
         "wand" => format!("You have found a magic {}.", trim_guess),
-        _ => format!("{} was not in the treasure chest.", trim_guess),
+        _ => format!("A {} was not in the treasure chest.", trim_guess),
     };
 
     println!("{}", result);
