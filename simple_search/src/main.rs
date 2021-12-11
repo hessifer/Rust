@@ -7,7 +7,7 @@ fn main() {
 
     for (i, line) in quote.to_lowercase().lines().enumerate() {
         if line.contains(search_term) {
-            println!("Line {}: {}", i, line);
+            println!("{}: {}", i + 1, line);
         }
     }
 }
