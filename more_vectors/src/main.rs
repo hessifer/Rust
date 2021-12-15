@@ -10,11 +10,17 @@ use std::io::Write;
 fn main() {
     let colors = collect_colors();
     let pattern = get_pattern();
+    let mut numbered_color: Vec<Vec<(usize, String)>> = vec![];
 
     for color in &colors {
         if color.contains(&pattern) {
             println!("Color: {}", color);
         }
+    }
+
+    // add capacity for numbered_color
+    for _ in colors.iter() {
+        numbered_color.push(Vec::with_capacity(2));
     }
 
     println!("The following colors have an even numbered length.");
@@ -23,7 +29,20 @@ fn main() {
             print!("{} ", color);
         }
     }
+
     println!();
+
+    // add data for numbered_color vectors
+    for (i, color) in colors.iter().enumerate() {
+        numbered_color[i].push((i, String::from(color)));
+    }
+
+    // display data for number_color
+    for (i, data) in numbered_color.iter().enumerate() {
+        for (j, _) in data.iter().enumerate() { // not necessary if we know we have 1 element
+            println!("{} - Element {} -> {}", i, data[j].0, data[j].1);
+        }
+    }
 }
 
 fn collect_colors() -> Vec<String> {
