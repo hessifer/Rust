@@ -20,7 +20,7 @@ fn main() {
 
     // add capacity for numbered_color
     for _ in colors.iter() {
-        numbered_color.push(Vec::with_capacity(2));
+        numbered_color.push(Vec::with_capacity(1));
     }
 
     println!("The following colors have an even numbered length.");
