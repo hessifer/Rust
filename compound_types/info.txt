@@ -1,0 +1,1 @@
+compound types gather multiple values from other types.

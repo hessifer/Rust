@@ -1,3 +1,6 @@
+use hello::greet;
+
 fn main() {
-    println!("Hello, world!");
+    // hello::greet(); // full path
+    greet();
 }
