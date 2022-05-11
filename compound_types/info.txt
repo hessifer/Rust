@@ -1,1 +1,5 @@
 compound types gather multiple values from other types.
+
+tuple has a max errority of 12, meaning this is the number of items in the tuple. The max number of items for a tuple is 12 support with complete functionality.
+
+arrays store multiple values of the same type. arrays have a element limit of 32 which after they lose some functionality. arrays are stored on the stack.

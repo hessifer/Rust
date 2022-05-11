@@ -1,0 +1,19 @@
+Stack
+- stores items in order
+- items are of fixed-size
+- last item in is the first item out (LIFO)
+- tends to be faster operations
+
+
+
+
+
+
+
+
+
+Heap
+- items are stored unordered
+- items are of variable-size
+- items are retrieved in an unoredered fashion
+- tends to be slower operations
