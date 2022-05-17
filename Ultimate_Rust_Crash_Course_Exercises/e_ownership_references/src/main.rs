@@ -45,6 +45,8 @@ fn main() {
 fn inspect(s: &String) {
     if s.ends_with("s") {
         println!("plural");
+    } else {
+        println!("singular");
     }
 }
 
