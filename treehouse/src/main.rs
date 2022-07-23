@@ -1,5 +1,6 @@
 use std::io::stdin;
 
+#[derive(Debug)]
 struct Visitor {
     name: String,
     greeting: String,
@@ -28,32 +29,48 @@ fn what_is_your_name() -> String {
 }
 
 fn main() {
-    println!("Hello, what's your name?");
-    let name: String = what_is_your_name();
-    let visitor_list: [Visitor; 3] = [
-        Visitor::new("bert", "Hello Bert, enjoy your treehouse."),
-        Visitor::new("steve", "Hi, Steve. Your milk is in the fridge."),
-        Visitor::new("fred", "Wow, who invited Fred?"),
-    ];
-    // let mut allow_them_in: bool = false;
-    /*
-    for visitor in &visitor_list {
-        if visitor == &name {
-            allow_them_in = true;
+    loop {
+        println!("Hello, what's your name? [Enter q to quit]: ");
+        let name: String = what_is_your_name();
+        /*
+        let visitor_list: [Visitor; 3] = [
+            Visitor::new("bert", "Hello Bert, enjoy your treehouse."),
+            Visitor::new("steve", "Hi, Steve. Your milk is in the fridge."),
+            Visitor::new("fred", "Wow, who invited Fred?"),
+        ];
+        */
+        let mut visitor_list = vec![
+            Visitor::new("bert", "Hello Bert, enjoy your treehouse."),
+            Visitor::new("steve", "Hi, Steve. Your milk is in the fridge."),
+            Visitor::new("fred", "Wow, who invited Fred?"),
+        ];
+        
+        // let mut allow_them_in: bool = false;
+        /*
+        for visitor in &visitor_list {
+            if visitor == &name {
+                allow_them_in = true;
+            }
         }
+        */
+
+        let known_visitor = visitor_list.iter().find(|visitor| visitor.name == name);
+        match known_visitor {
+            Some(visitor) => visitor.greet_visitor(),
+            None => if name == "q" {
+                break;
+            } else {
+                println!("{} is not on the visitor list!", name);
+                visitor_list.push(Visitor::new(&name, "New friend"));
+            }
+        }
+        /*
+        if allow_them_in {
+            println!("Welcome to the Treehouse, {}", name);
+        } else {
+            println!("Sorry, you aren't on the list.");
+        }
+        */
+        // println!("Hello, {}", what_is_your_name().to_uppercase());
     }
-    */
-    let known_visitor = visitor_list.iter().find(|visitor| visitor.name == name);
-    match known_visitor {
-        Some(visitor) => visitor.greet_visitor(),
-        None => println!("You are not on the visitor list. Please leave."),
-    }
-    /*
-    if allow_them_in {
-        println!("Welcome to the Treehouse, {}", name);
-    } else {
-        println!("Sorry, you aren't on the list.");
-    }
-    */
-    // println!("Hello, {}", what_is_your_name().to_uppercase());
 }
