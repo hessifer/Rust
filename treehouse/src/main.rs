@@ -19,7 +19,9 @@ impl Visitor {
 
     fn greet_visitor(&self) {
         match &self.action {
-            VisitorAction::Accept => println!("Welcome to the treehouse, {}", self.name.to_uppercase()),
+            VisitorAction::Accept => {
+                println!("Welcome to the treehouse, {}", self.name.to_uppercase())
+            }
             VisitorAction::AcceptWithNote { note } => {
                 println!("Welcome to the treehouse, {}", self.name.to_uppercase());
                 println!("{}", note);
@@ -27,7 +29,9 @@ impl Visitor {
                     println!("Do not serve alcohol to {}", self.name.to_uppercase());
                 }
             }
-            VisitorAction::Probation => println!("{} is now a probationary member.", self.name.to_uppercase()),
+            VisitorAction::Probation => {
+                println!("{} is now a probationary member.", self.name.to_uppercase())
+            }
             VisitorAction::Refuse => println!("Do not allow {} in.", self.name.to_uppercase()),
         }
     }
@@ -50,54 +54,47 @@ fn what_is_your_name() -> String {
 }
 
 fn main() {
+    // Loop until user enters 'q'
     loop {
         println!("Hello, what's your name? [Enter q to quit]: ");
         let name: String = what_is_your_name();
-        /*
-        let visitor_list: [Visitor; 3] = [
-            Visitor::new("bert", "Hello Bert, enjoy your treehouse."),
-            Visitor::new("steve", "Hi, Steve. Your milk is in the fridge."),
-            Visitor::new("fred", "Wow, who invited Fred?"),
-        ];
-        */
+
+        // List of visitors (Uses Visitor constructor to populate)
         let mut visitor_list = vec![
             Visitor::new("Bert", VisitorAction::Accept, 45),
-            Visitor::new("Steve", VisitorAction::AcceptWithNote { note: String::from("Lactose-free milk is in the fridge.") }, 15),
+            Visitor::new(
+                "Steve",
+                VisitorAction::AcceptWithNote {
+                    note: String::from("Lactose-free milk is in the fridge."),
+                },
+                15,
+            ),
             Visitor::new("Fred", VisitorAction::Refuse, 30),
             Visitor::new("Charles", VisitorAction::Probation, 47),
         ];
-        
-        // let mut allow_them_in: bool = false;
-        /*
-        for visitor in &visitor_list {
-            if visitor == &name {
-                allow_them_in = true;
-            }
-        }
-        */
 
+        // Greet known visitors or add new ones, provided entry is not q
         let known_visitor = visitor_list.iter().find(|visitor| visitor.name == name);
         match known_visitor {
             Some(visitor) => visitor.greet_visitor(),
-            None => if name == "q" {
-                break;
-            } else {
-                println!("{} is not on the visitor list!", name.to_uppercase());
-                visitor_list.push(Visitor::new(&name, VisitorAction::AcceptWithNote { note: "New friend".to_string() }, 0));
+            None => {
+                if name == "q" {
+                    break; // exit main loop
+                } else {
+                    println!("{} is not on the visitor list!", name.to_uppercase());
+                    visitor_list.push(Visitor::new(
+                        &name,
+                        VisitorAction::AcceptWithNote {
+                            note: "New friend".to_string(),
+                        },
+                        0,
+                    ));
+                }
             }
         }
 
-        // Pretty Pring visitor_list Vector
-        println!("\n\nContents of Visitor List");
+        // Pretty Print visitor_list Vector
+        println!("\n\nContents of Visitor List:");
         println!("{:#?}", visitor_list);
-
-        /*
-        if allow_them_in {
-            println!("Welcome to the Treehouse, {}", name);
-        } else {
-            println!("Sorry, you aren't on the list.");
-        }
-        */
-        // println!("Hello, {}", what_is_your_name().to_uppercase());
     }
 }
