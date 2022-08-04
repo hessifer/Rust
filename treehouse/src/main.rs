@@ -35,6 +35,7 @@ fn main() {
         Visitor::new("steve", "Hi, Steve. Your milk is in the fridge."),
         Visitor::new("fred", "Wow, who invited Fred?"),
     ];
+
     // let mut allow_them_in: bool = false;
     /*
     for visitor in &visitor_list {
@@ -43,11 +44,13 @@ fn main() {
         }
     }
     */
+
     let known_visitor = visitor_list.iter().find(|visitor| visitor.name == name);
     match known_visitor {
         Some(visitor) => visitor.greet_visitor(),
         None => println!("You are not on the visitor list. Please leave."),
     }
+    
     /*
     if allow_them_in {
         println!("Welcome to the Treehouse, {}", name);
