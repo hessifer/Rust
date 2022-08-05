@@ -19,6 +19,13 @@ fn main() {
         // - If arg is "sum", then call the sum() function
         // - If arg is "double", then call the double() function
         // - If arg is anything else, then call the count() function, passing "arg" to it.
+        if arg == "sum" {
+            sum();
+        } else if arg == "double" {
+            double();
+        } else {
+            count(arg);
+        }
 
 
         // 1b. Now try passing "sum", "double" and "bananas" to the program by adding your argument
@@ -31,6 +38,9 @@ fn sum() {
     // 2. Use a "for loop" to iterate through integers from 7 to 23 *inclusive* using a range
     // and add them all together (increment the `sum` variable).  Hint: You should get 255
     // Run it with `cargo run sum`
+    for num in 7..=23 {
+        sum += num;
+    }
 
 
     println!("The sum is {}", sum);
@@ -42,6 +52,10 @@ fn double() {
     // 3. Use a "while loop" to count how many times you can double the value of `x` (multiply `x`
     // by 2) until `x` is larger than 500.  Increment `count` each time through the loop. Run it
     // with `cargo run double`  Hint: The answer is 9 times.
+    while x <= 500 {
+        x *= 2;
+        count += 1;
+    }
 
 
     println!("You can double x {} times until x is larger than 500", count);
@@ -52,7 +66,13 @@ fn count(arg: String) {
     // You will need to count your loops, somehow.  Run it with `cargo run bananas`
     //
     // print!("{} ", arg); // Execute this line 8 times, and then break. `print!` doesn't add a newline.
+    let mut count = 0;
 
+    loop {
+        if count > 7 { break };
+        print!("{}", arg);
+        count += 1;
+    }
 
     println!(); // This will output just a newline at the end for cleanliness.
 }
