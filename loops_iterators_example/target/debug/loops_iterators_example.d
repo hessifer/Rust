@@ -1,1 +1,1 @@
-/home/nagalot/git/Rust/loops_iterators_example/target/debug/loops_iterators_example: /home/nagalot/git/Rust/loops_iterators_example/src/main.rs
+/Users/nagalot/RustroverProjects/Rust/loops_iterators_example/target/debug/loops_iterators_example: /Users/nagalot/RustroverProjects/Rust/loops_iterators_example/src/main.rs
