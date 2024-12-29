@@ -1,0 +1,6 @@
+[package]
+name = "working_with_slices"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
