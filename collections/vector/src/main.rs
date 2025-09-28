@@ -10,7 +10,7 @@ fn main() {
     let colors: Vec<String> = vec![String::from("orange"), String::from("yellow"), String::from("blue"), String::from("red"), String::from("green")];
     // Vector of type u32
     let nums: Vec<u32> = vec![4, 5, 6, 8, 1, 23, 25];
-
+    let name: String = String::from("Charles");
     for color in colors.iter() {
         println!("{}", color);
     }
@@ -20,4 +20,6 @@ fn main() {
             println!("{} is an even number.", num);
         }
     }
+
+    println!("{name}");
 }
