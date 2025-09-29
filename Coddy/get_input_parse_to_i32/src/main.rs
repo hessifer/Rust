@@ -21,6 +21,11 @@ fn main() {
     match trimmed_input.parse::<i32>() {
         Ok(number) => {
             println!("The number is {number}");       
+            if number % 2 == 0 {
+                println!("{number} is even.");
+            } else {
+                println!("{number} is odd.");
+            }
         }
         Err(e) => {
             eprintln!("Error: Could not parse {trimmed_input} as an integer. Details {e}");
