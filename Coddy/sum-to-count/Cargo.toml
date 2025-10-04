@@ -1,0 +1,6 @@
+[package]
+name = "sum-to-count"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]

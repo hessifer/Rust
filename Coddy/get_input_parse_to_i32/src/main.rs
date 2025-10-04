@@ -3,7 +3,7 @@ use std::io::{Write};
 
 fn main() {
     // ask for a number
-    print!("Please enter a number: ");
+    println!("Hello!");
 
     // flush stdout to prompt immediately
     io::stdout().flush().expect("Failed to flush stdout");
