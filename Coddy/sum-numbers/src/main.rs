@@ -11,6 +11,7 @@ fn some_numbers(end: i32, inclusive: bool) -> i32 {
 }
 
 fn main() {
+    // TODO: add ability to use start number for range and indicate if the range is inclusive.
     let mut input = String::new();
     print!("Please enter a number and I will tell you the sum of all numbers from 1 to your number (inclusive): ");
     io::stdout().flush().expect("Error: could not flush stdout.");
