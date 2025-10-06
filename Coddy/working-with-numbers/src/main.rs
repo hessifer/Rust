@@ -52,6 +52,28 @@ fn find_prime_numbers(numbers: &[i32]) -> Vec<i32> {
     prime_numbers
 }
 
+fn find_even_numbers(numbers: &[i32]) -> Vec<i32> {
+    let mut even_numbers = Vec::new();
+
+    for &number in numbers {
+        if number % 2 == 0 {
+            even_numbers.push(number);
+        }
+    }
+    even_numbers
+}
+
+fn find_odd_numbers(numbers: &[i32]) -> Vec<i32> {
+    let mut odd_numbers = Vec::new();
+
+    for &number in numbers {
+        if number % 2 != 0 {
+            odd_numbers.push(number);
+        }
+    }
+    odd_numbers
+}
+
 fn main() {}
 
 #[cfg(test)]
@@ -80,5 +102,17 @@ mod tests {
     fn test_find_prime_numbers() {
         let numbers = vec![1, 2, 3, 4, 5];
         assert_eq!(find_prime_numbers(&numbers), vec![2, 3, 5]);
+    }
+
+    #[test]
+    fn test_find_even_numbers() {
+        let numbers = vec![1, 2, 3, 4, 5];
+        assert_eq!(find_even_numbers(&numbers), vec![2, 4]);
+    }
+
+    #[test]
+    fn test_find_odd_numbers() {
+        let numbers = vec![1, 2, 3, 4, 5];
+        assert_eq!(find_odd_numbers(&numbers), vec![1, 3, 5]);
     }
 }
