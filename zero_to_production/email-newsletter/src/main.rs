@@ -1,18 +1,11 @@
-use actix_web::{App, HttpRequest, HttpServer, Responder, web};
+use std::net::TcpListener;
 
-async fn greet(req: HttpRequest) -> impl Responder {
-    let name = req.match_info().get("name").unwrap_or("World");
-    format!("Hello {}!", &name)
-}
+use email_newsletter::run;
 
-#[actix_web::main]
-async fn main() -> std::io::Result<()> {
-    HttpServer::new(|| {
-        App::new()
-            .route("/", web::get().to(greet))
-            .route("/{name}", web::get().to(greet))
-    })
-    .bind(("127.0.0.1", 8000))?
-    .run()
-    .await
+#[tokio::main]
+async fn main() -> Result<(), std::io::Error> {
+    let listener = TcpListener::bind("127.0.0.1:8899").expect("Failed to bind to random port");
+    // bubble up the io::Error if we failed to bind the address
+    // otherwise call .await on our Server
+    run(listener)?.await
 }

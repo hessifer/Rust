@@ -5,4 +5,16 @@ edition = "2024"
 
 [dependencies]
 actix-web = "4.13.0"
-tokio = "1.49.0"
+openssl = "0.10.75"
+tokio = {version="1.49.0", features=["full"]}
+
+[dev-dependencies]
+reqwest = "0.12"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+path = "src/main.rs"
+name = "email-newsletter"
+
