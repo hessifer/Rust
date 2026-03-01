@@ -1,6 +1,7 @@
 fn main() {
     let numbers_tuple: (i32, i32, i32) = (10, 13, 5);
     let (x, y, z) = numbers_tuple;
+    // let (x, y, z) = numbers_tuple;
 
     println!("x -> {}", x);
     println!("y -> {}", y);
